@@ -1,0 +1,35 @@
+# 사이트 기본 설정
+title: "GRIT 과학학원 | 과학쟁이"
+description: "30년 현장 강의 노하우! 중고등 내신 완벽 대비 및 수능 과학 1등급을 향한 5단계 각성 커리큘럼"
+url: "https://shellem40-pixel.github.io"
+baseurl: "/gritscience" # GitHub 프로젝트 저장소 이름
+
+# 테마 설정 (Minimal Mistakes 원격 테마 적용)
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # "air", "dark" 등으로 변경 가능
+
+# 작성자 설정
+author:
+  name: "과학쟁이 원장"
+  bio: "GRIT 마인드셋으로 완성하는 완벽한 과학 학습"
+
+# 플러그인 (검색 엔진 최적화 및 사이트맵 자동 생성)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 사이트 네비게이션 설정 활성화
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
