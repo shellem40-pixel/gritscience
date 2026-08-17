@@ -1,46 +1,30 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>GritScience</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background: #f5f5f5;
-        }
-        header {
-            margin-bottom: 30px;
-        }
-        nav a {
-            margin-right: 20px;
-            text-decoration: none;
-            color: #0077cc;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>GritScience</h1>
-        <nav>
-            <a href="index.html">홈</a>
-            <a href="about.html">소개</a>
-            <a href="contact.html">연락처</a>
-        </nav>
-    </header>
+---
+layout: splash
+title: "기초부터 수능까지, 과학의 완성"
+header:
+  overlay_color: "#333"
+  overlay_filter: "0.5"
+  # overlay_image: /assets/images/main-hero.jpg (나중에 메인 배경 이미지를 넣을 때 주석 해제)
+  actions:
+    - label: "프로그램 알아보기"
+      url: "/services/"
+excerpt: "30년 현장 강의 노하우를 바탕으로, 물리·화학·생명과학·지구과학의 뼈대를 세우고 수능 1등급을 완성합니다."
 
-    <section>
-        <h2>환영합니다!</h2>
-        <p>이곳은 Byung-soo님의 첫 번째 GitHub Pages 홈페이지입니다.</p>
-    </section>
-</body>
-</html>
+feature_row:
+  - image_path: /assets/placeholder.jpg # 추후 직접 디자인하신 이미지 경로로 변경
+    alt: "내신 관리 시스템"
+    title: "철저한 내신(GPA) 관리"
+    excerpt: "학교별 맞춤형 시험 대비와 구글 워크스페이스 기반의 체계적인 오답노트 및 성적 관리 시스템."
+    url: "/services/"
+    btn_label: "자세히 보기"
+    btn_class: "btn--primary"
+  - image_path: /assets/placeholder.jpg
+    alt: "수능 1등급 커리큘럼"
+    title: "6주 몰입 각성 스터디"
+    excerpt: "그릿(GRIT)을 키우는 자기주도 학습법과 5단계 심화 커리큘럼으로 수능 과학 1등급을 달성합니다."
+    url: "/services/"
+    btn_label: "자세히 보기"
+    btn_class: "btn--primary"
+---
+
+{% include feature_row %}
