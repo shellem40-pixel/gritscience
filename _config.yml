@@ -32,4 +32,8 @@ defaults:
       type: posts
     values:
       layout: single
+<<<<<<< HEAD
       author_profile: true
+=======
+      author_profile: true
+>>>>>>> fc08213acad7ca19cd860a361a11fc1ae7dc5354

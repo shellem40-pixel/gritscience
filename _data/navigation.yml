@@ -1,9 +1,7 @@
 main:
   - title: "학원 소개"
     url: /about/
-  - title: "프로그램"
-    url: /services/
-  - title: "블로그"
-    url: /blog/
-  - title: "공지사항"
-    url: /news/
+  - title: "그릿과학쟁이 시간표"
+    url: /timetable/
+  - title: "과학학습 질문방"
+    url: /qna/
