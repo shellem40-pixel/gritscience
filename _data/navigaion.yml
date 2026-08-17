@@ -1,0 +1,9 @@
+main:
+  - title: "학원 소개"
+    url: /about/
+  - title: "프로그램"
+    url: /services/
+  - title: "블로그"
+    url: /blog/
+  - title: "공지사항"
+    url: /news/
