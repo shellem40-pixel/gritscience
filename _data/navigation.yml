@@ -1,7 +1,7 @@
 main:
-  - title: "학원 소개"
+  - title: "학원&시스템"
     url: /about/
-  - title: "프로그램 소개"
+  - title: "시간표&커리큘럼"
     url: /services/
   - title: "블로그"
     url: /blog/

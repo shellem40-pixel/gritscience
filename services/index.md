@@ -1,7 +1,11 @@
 ---
-layout: splash
-title: "프로그램 소개"
+layout: single
+title: "학습 프로그램과 시간표"
 permalink: /services/
+header:
+  overlay_color: "#333"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/sevice_title.png
 
 # 원하는 이름으로 배열 그룹을 만듭니다.
 my_program_row:

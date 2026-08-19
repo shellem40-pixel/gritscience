@@ -1,7 +1,11 @@
 ---
 layout: single
-title: "학원 소개"
+title: "학원과 시스템"
 permalink: /about/
+header:
+  overlay_color: "#333"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/about_title.png
 ---
 
 ## 과학쟁이 원장 인사말
