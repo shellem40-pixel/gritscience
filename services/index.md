@@ -5,20 +5,20 @@ permalink: /services/
 header:
   overlay_color: "#333"
   overlay_filter: "0.5"
-  overlay_image: /assets/images/sevice_title.png
+  overlay_image: /assets/images/service_title.png
 
 # 원하는 이름으로 배열 그룹을 만듭니다.
 my_program_row:
-  - image_path: /assets/images/planner.jpg
+  - image_path: /assets/images/about_photo2.jpg
     title: "6주 몰입 각성 스터디 플래너"
     excerpt: "단기간에 완벽 마스터! 사고력과 문제 해결 능력을 극대화하는 방법을 알아봅니다."
-    url: "/blog/study-planner/"
+    url: "/blog/_posts_/"
     btn_label: "글 읽기"
     btn_class: "btn--primary"
-  - image_path: /assets/images/note.jpg
+  - image_path: /assets/images/about_photo1.jpg
     title: "스마트 오답노트 관리 시스템"
     excerpt: "학생의 학습 상황을 정확히 진단하고, 단계별 과정에 맞는 체계적인 관리를 진행합니다."
-    url: "/blog/smart-note/"
+    url: "/news/_posts_/"
     btn_label: "글 읽기"
     btn_class: "btn--primary"
 ---
