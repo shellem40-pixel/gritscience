@@ -33,8 +33,13 @@ feature_row_3:
 ---
 
 <style>
-  /* 메인 화면 전체 가운데 정렬 스타일 */
+  /* 상단 메인 배너 텍스트 중앙 정렬 */
   .page__hero--overlay .wrapper { text-align: center; }
+  
+  /* 기능 블록 2개가 한쪽으로 쏠리지 않도록 전체 묶음을 중앙으로 배치,이 라인 없으면 좌측정렬 기본옵션임 */
+  .feature__wrapper { justify-content: center !important; }
+  
+  /* 블록 안의 소제목과 본문 텍스트를 중앙 정렬 */
   .feature__item { text-align: center; }
   .archive__item-title { text-align: center; }
   .archive__item-excerpt { text-align: center; }
