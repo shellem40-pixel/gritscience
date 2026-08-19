@@ -1,0 +1,24 @@
+/* ==========================================================================
+   나만의 커스텀 스킨 색상 설정
+   ========================================================================== */
+
+/* Colors */
+$background-color: #ffffff !default; /* 전체 배경색 (기본: 흰색) */
+$text-color: #333333 !default; /* 기본 글자색 (기본: 진한 회색) */
+$primary-color: #1a5276 !default; /* 메인 포인트 색상 (과학 학원에 어울리는 진한 파란색) */
+$border-color: #e5e5e5 !default; /* 선 색상 */
+$code-background-color: #f6f8fa !default;
+$code-background-color-dark: #2f363d !default;
+$text-muted-color: #737373 !default; /* 덜 중요한 글자색 */
+$text-muted-color-light: #b3b3b3 !default;
+$link-color: #2980b9 !default; /* 링크(URL) 색상 */
+$link-color-hover: mix(#000, $link-color, 25%) !default; /* 링크에 마우스 올렸을 때 색상 */
+
+/* Type */
+$sans-serif: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", "Noto Sans KR", sans-serif !default; /* 한글에 최적화된 폰트 셋 */
+$serif: "Georgia", "Times New Roman", serif !default;
+$monospace: "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !default;
+
+/* Buttons */
+$btn-primary-color: #fff !default; /* 버튼 안의 글자색 */
+$btn-primary-bg: #1a5276 !default; /* 버튼 배경색 (위의 primary-color와 맞춤) */
