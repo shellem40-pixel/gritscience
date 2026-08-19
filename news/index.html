@@ -1,0 +1,9 @@
+---
+layout: archive
+title: "학원 공지사항"
+permalink: /news/
+author_profile: true
+---
+{% for post in site.categories.news %}
+  {% include archive-single.html %}
+{% endfor %}
