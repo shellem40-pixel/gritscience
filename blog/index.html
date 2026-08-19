@@ -2,24 +2,24 @@
 layout: archive
 permalink: /blog/
 author_profile: false
-classes: wide # 핵심 포인트! 화면 폭을 넓게 확장하는 테마 내장 명령어입니다.
+classes: wide # 1. 전체 도화지를 넓게 쓰는 테마 명령어
 ---
 
 <style>
-  /* 테마에서 기본으로 출력하는 작은 제목을 숨깁니다 */
+  /* 테마에서 기본으로 출력하는 밋밋한 작은 제목 숨기기 */
   .page__title { display: none !important; }
   
-  /* 본문 전체 도화지 폭을 시안처럼 시원하게 1200px까지 확 넓혀줍니다 */
-  .page__inner { max-width: 1200px !important; }
-
-  /* 1. 상단 타이틀 및 설명 (시안과 동일한 거대한 글씨와 중앙 정렬) */
-  .blog-header {
+  /* ==========================================
+     [영역 중앙] 상단 제목과 설명글 스타일 
+     ========================================== */
+  .blog-header-box {
+    max-width: 700px; /* 글씨 영역이 너무 퍼지지 않도록 700px로 제한 */
+    margin: 2em auto 4em auto; /* 마법의 중앙 정렬 코드 (auto) */
     text-align: center;
-    margin-top: 2em;
-    margin-bottom: 4em;
+    word-break: keep-all; /* 한글 단어가 예쁘게 끊어지도록 설정 */
   }
   .blog-main-title {
-    font-size: 3.5em; /* 시안처럼 아주 거대한 글씨 크기 */
+    font-size: 3.2em;
     font-weight: 800;
     color: #111;
     margin-bottom: 0.3em;
@@ -29,15 +29,19 @@ classes: wide # 핵심 포인트! 화면 폭을 넓게 확장하는 테마 내�
   .blog-subtitle {
     font-size: 1.1em;
     color: #666;
-    max-width: 800px;
-    margin: 0 auto;
     line-height: 1.6;
   }
 
-  /* 2. 카테고리 메뉴 & 검색 버튼 묶음 */
+  /* ==========================================
+     [넓혀서 중앙] 하단 카테고리 및 게시글 목록
+     ========================================== */
+  /* 전체 도화지를 1400px까지 아주 시원하게 넓힙니다 */
+  .page__inner { max-width: 1300px !important; }
+
+  /* 카테고리 메뉴 & 검색 버튼 묶음 */
   .blog-nav-container {
     display: flex;
-    justify-content: space-between; /* 양 끝으로 밀어내기 */
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #eaeaea;
     padding-bottom: 15px;
@@ -60,16 +64,16 @@ classes: wide # 핵심 포인트! 화면 폭을 넓게 확장하는 테마 내�
     font-weight: 600;
     font-size: 0.95em;
     transition: color 0.2s;
-    padding-bottom: 16px; /* 밑줄 위치를 아래로 내림 */
+    padding-bottom: 16px;
   }
   /* 선택된 메뉴 디자인 */
   .blog-category-menu li a:hover,
   .blog-category-menu li a.active {
     color: #111;
-    box-shadow: 0 2px 0 0 #111; /* 시안과 동일한 하단 검은색 굵은 줄 */
+    box-shadow: 0 2px 0 0 #111;
   }
 
-  /* 우측 검색창 아이콘 (글씨 제외하고 돋보기만 깔끔하게 배치) */
+  /* 우측 검색창 아이콘 */
   .blog-search-box {
     display: flex;
     align-items: center;
@@ -80,28 +84,22 @@ classes: wide # 핵심 포인트! 화면 폭을 넓게 확장하는 테마 내�
   }
   .blog-search-box:hover { color: #2471a3; }
 
-  /* 3. 폭이 넓어진 2단(2열) 갤러리 배열 */
+  /* 넓어진 2단(2열) 갤러리 배열 */
   .custom-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px; /* 카드가 넓어진 만큼 사이 여백도 시원하게 넓힘 */
+    gap: 50px;
   }
-  
-  /* 테마 기본 Grid를 무시하고 2단으로 꽉 차게 덮어쓰기 */
   .custom-grid-wrapper .grid__item {
     width: 100% !important;
     margin: 0 !important;
   }
-  
-  /* 카드 내부 썸네일 이미지 비율 고정 (시안의 직사각형 느낌) */
   .custom-grid-wrapper .archive__item-teaser img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 4px;
   }
-
-  /* 카드 내부 글씨 크기 (넓어진 폭에 맞춰 폰트도 키움) */
   .custom-grid-wrapper .archive__item-title {
     font-size: 1.6em;
     font-weight: 700;
@@ -124,15 +122,16 @@ classes: wide # 핵심 포인트! 화면 폭을 넓게 확장하는 테마 내�
   }
 </style>
 
-<!-- 1. 커스텀 타이틀 및 설명 -->
-<!-- index.html 또는 메인 마크다운 파일 -->
-<div class="home-header-section">
-  <h1>GRIT 과학쟁이 블로그</h1>
-  <p>단순한 문제 풀이를 넘어, 학생 스스로 파고드는 흔들리지 않는 심화 학습 동기를 부여합니다.<br>
-  최적화된 과학 학습 팁과 성적 향상 노하우를 연재합니다.</p>
+<!-- 1. [영역 중앙] 커스텀 타이틀 및 설명 박스 -->
+<div class="blog-header-box">
+  <h1 class="blog-main-title">GRIT 과학쟁이 블로그</h1>
+  <p class="blog-subtitle">
+    단순한 문제 풀이를 넘어, 학생 스스로 파고드는 흔들리지 않는 심화 학습 동기를 부여합니다.<br>
+    최적화된 과학 학습 팁과 성적 향상 노하우를 연재합니다.
+  </p>
 </div>
 
-<!-- 2. 카테고리 메뉴 및 검색창 -->
+<!-- 2. [넓혀서 중앙] 카테고리 메뉴 및 검색창 -->
 <div class="blog-nav-container">
   <ul class="blog-category-menu">
     <li><a href="/blog/" class="active">최신글 (Latest)</a></li>
@@ -142,13 +141,12 @@ classes: wide # 핵심 포인트! 화면 폭을 넓게 확장하는 테마 내�
     <li><a href="/blog/">학습자극(GRIT)</a></li>
   </ul>
   
-  <!-- 테마 기본 검색창 팝업을 띄우는 버튼 -->
   <div class="blog-search-box search-toggle">
     <i class="fas fa-search"></i>
   </div>
 </div>
 
-<!-- 3. 시안 비율에 맞춘 넓은 2단 Grid 갤러리 -->
+<!-- 3. [넓혀서 중앙] 시안 비율에 맞춘 2단 Grid 갤러리 -->
 <div class="custom-grid-wrapper">
   {% for post in site.posts %}
     {% include archive-single.html type="grid" %}
