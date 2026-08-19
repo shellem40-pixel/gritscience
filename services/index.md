@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: splash
 title: "프로그램 소개"
 permalink: /services/
 ---
@@ -18,9 +18,6 @@ permalink: /services/
 * AppSheet와 연동된 개별 맞춤 오답 분석
 * 학생의 취약점을 정확히 진단하여 보상 프로그램과 연계
 
----
-layout: splash
-title: "프로그램 안내"
 
 # 원하는 이름으로 배열 그룹을 만듭니다.
 my_program_row:
