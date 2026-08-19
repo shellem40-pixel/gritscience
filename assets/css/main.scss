@@ -1,0 +1,24 @@
+/* 1. 상단 제목 및 설명: 폭을 제한하고 완벽한 중앙 정렬 */
+.home-header-section {
+  text-align: center;         /* 텍스트 중앙 정렬 */
+  max-width: 700px;           /* 상단 영역의 최대 폭 제한 (원하는 느낌에 맞춰 조절 가능) */
+  margin: 0 auto 40px auto;   /* 블록 자체를 중앙에 배치하고 아랫부분과 여백 확보 */
+  word-break: keep-all;       /* 한글 텍스트가 단어 단위로 깔끔하게 떨어지도록 설정 */
+}
+
+.home-header-section h1 {
+  margin-bottom: 15px;        /* 제목과 설명 사이의 간격 */
+  font-weight: 700;
+}
+
+/* 2. 하단 카테고리 및 게시글 목록: 전체 페이지 폭 확장 */
+.initial-content,
+.page__inner {
+  max-width: 1400px !important; /* 기본 1024px~1280px인 전체 폭을 시원하게 확장 */
+  margin: 0 auto;               /* 넓어진 영역도 화면 중앙에 위치하도록 설정 */
+}
+
+/* 3. 하단 목록 영역이 넓어진 컨테이너를 꽉 채우도록 설정 */
+.archive {
+  width: 100%;
+}
