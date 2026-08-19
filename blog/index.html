@@ -2,17 +2,24 @@
 layout: archive
 permalink: /blog/
 author_profile: false
+classes: wide # 핵심 포인트! 화면 폭을 넓게 확장하는 테마 내장 명령어입니다.
 ---
 
 <style>
+  /* 테마에서 기본으로 출력하는 작은 제목을 숨깁니다 */
+  .page__title { display: none !important; }
+  
+  /* 본문 전체 도화지 폭을 시안처럼 시원하게 1200px까지 확 넓혀줍니다 */
+  .page__inner { max-width: 1200px !important; }
+
   /* 1. 상단 타이틀 및 설명 (시안과 동일한 거대한 글씨와 중앙 정렬) */
   .blog-header {
     text-align: center;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 4em;
   }
   .blog-main-title {
-    font-size: 3.2em;
+    font-size: 3.5em; /* 시안처럼 아주 거대한 글씨 크기 */
     font-weight: 800;
     color: #111;
     margin-bottom: 0.3em;
@@ -22,17 +29,17 @@ author_profile: false
   .blog-subtitle {
     font-size: 1.1em;
     color: #666;
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
   }
 
-  /* 2. 카테고리 메뉴 & 검색 버튼 묶음 (시안의 빨간 동그라미 부분) */
+  /* 2. 카테고리 메뉴 & 검색 버튼 묶음 */
   .blog-nav-container {
     display: flex;
-    justify-content: space-between; /* 왼쪽 메뉴와 오른쪽 검색창을 양 끝으로 밀어냅니다 */
+    justify-content: space-between; /* 양 끝으로 밀어내기 */
     align-items: center;
-    border-bottom: 1px solid #eaeaea; /* 전체 하단 연한 회색 선 */
+    border-bottom: 1px solid #eaeaea;
     padding-bottom: 15px;
     margin-bottom: 3em;
     flex-wrap: wrap;
@@ -45,70 +52,75 @@ author_profile: false
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 25px;
-    font-size: 0.95em;
-    font-weight: 600;
+    gap: 30px;
   }
   .blog-category-menu li a {
     text-decoration: none;
     color: #777;
+    font-weight: 600;
+    font-size: 0.95em;
     transition: color 0.2s;
+    padding-bottom: 16px; /* 밑줄 위치를 아래로 내림 */
   }
-  /* 선택된 메뉴 디자인 (검은색 글씨 + 하단 굵은 줄) */
+  /* 선택된 메뉴 디자인 */
   .blog-category-menu li a:hover,
   .blog-category-menu li a.active {
     color: #111;
-    box-shadow: 0 2px 0 0 #111; 
-    padding-bottom: 16px; /* 선 위치를 아래로 딱 맞춤 */
+    box-shadow: 0 2px 0 0 #111; /* 시안과 동일한 하단 검은색 굵은 줄 */
   }
 
-  /* 우측 검색창 디자인 (클릭 시 테마 기본 검색창이 열림) */
+  /* 우측 검색창 아이콘 (글씨 제외하고 돋보기만 깔끔하게 배치) */
   .blog-search-box {
     display: flex;
     align-items: center;
-    gap: 8px;
     cursor: pointer;
     color: #333;
-    font-weight: 600;
-    font-size: 0.95em;
-    padding: 5px 10px;
+    font-size: 1.2em;
+    padding: 5px;
   }
-  .blog-search-box i { font-size: 1.1em; }
-  .blog-search-box:hover { color: #2471a3; } /* 마우스 올리면 학원 테마색으로 변경 */
+  .blog-search-box:hover { color: #2471a3; }
 
-  /* 3. 시안과 동일한 큼직한 2단(2열) 카드 갤러리 배열 */
+  /* 3. 폭이 넓어진 2단(2열) 갤러리 배열 */
   .custom-grid-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 무조건 2칸으로 쪼갭니다 */
-    gap: 40px; /* 카드 사이의 넓은 여백 */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px; /* 카드가 넓어진 만큼 사이 여백도 시원하게 넓힘 */
   }
   
-  /* 테마 기본 4단 Grid를 무시하고 2단으로 꽉 차게 덮어쓰기 */
+  /* 테마 기본 Grid를 무시하고 2단으로 꽉 차게 덮어쓰기 */
   .custom-grid-wrapper .grid__item {
     width: 100% !important;
     margin: 0 !important;
   }
   
-  /* 카드 내부 글씨 크기 조정 (시안 느낌 구현) */
+  /* 카드 내부 썸네일 이미지 비율 고정 (시안의 직사각형 느낌) */
+  .custom-grid-wrapper .archive__item-teaser img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  /* 카드 내부 글씨 크기 (넓어진 폭에 맞춰 폰트도 키움) */
   .custom-grid-wrapper .archive__item-title {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 700;
     line-height: 1.3;
     margin-top: 15px;
     margin-bottom: 10px;
   }
   .custom-grid-wrapper .archive__item-excerpt {
-    font-size: 0.95em;
+    font-size: 1em;
     color: #666;
     line-height: 1.6;
   }
 
-  /* 스마트폰 모바일 화면에서는 1단으로 자동 변경 */
+  /* 스마트폰 대응 */
   @media (max-width: 768px) {
-    .custom-grid-wrapper { grid-template-columns: 1fr; }
+    .custom-grid-wrapper { grid-template-columns: 1fr; gap: 30px; }
     .blog-main-title { font-size: 2.2em; }
-    .blog-nav-container { flex-direction: column; align-items: flex-start; }
-    .blog-search-box { align-self: flex-end; margin-top: -45px; }
+    .blog-nav-container { flex-direction: column-reverse; align-items: flex-start; }
+    .blog-search-box { align-self: flex-end; margin-bottom: 15px; }
   }
 </style>
 
@@ -131,15 +143,15 @@ author_profile: false
     <li><a href="/blog/">학습자극(GRIT)</a></li>
   </ul>
   
-  <!-- 'search-toggle' 클래스가 테마의 기본 검색 기능을 자동으로 호출합니다 -->
+  <!-- 테마 기본 검색창 팝업을 띄우는 버튼 -->
   <div class="blog-search-box search-toggle">
-    <i class="fas fa-search"></i> <span>검색 (Search)</span>
+    <i class="fas fa-search"></i>
   </div>
 </div>
 
-<!-- 3. 시안 비율에 맞춘 2단 Grid 갤러리 -->
+<!-- 3. 시안 비율에 맞춘 넓은 2단 Grid 갤러리 -->
 <div class="custom-grid-wrapper">
-  {% for post in site.categories.blog %}
+  {% for post in site.posts %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
