@@ -4,7 +4,7 @@ description: "새로운 과학 학습 밀착 관리 시스템 - 심화학습연�
 url: "https://shellem40-pixel.github.io"
 baseurl: "/gritscience"
 
-# 테마 설정 (Minimal Mistakes 원격 테마 적용)
+# 테마 설정
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default" 
 
@@ -15,14 +15,14 @@ author:
   location: "일산후곡, 김포, 운정"
   email: "shellem40@gmail.com"
 
-# 플러그인
+# 플러그인 (에러 해결을 위한 캐시 플러그인 포함)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-include-cache
 
-# 기본 레이아웃 설정
+# 기본 레이아웃 및 경로 설정
 defaults:
   - scope:
       path: ""
@@ -34,11 +34,3 @@ defaults:
       type: posts
     values:
       layout: single
-<<<<<<< HEAD
-<<<<<<< HEAD
-      author_profile: true
-=======
-      author_profile: true
->>>>>>> fc08213acad7ca19cd860a361a11fc1ae7dc5354
-=======
->>>>>>> d37e88355107d140b274aa612a96bd88006daa62
