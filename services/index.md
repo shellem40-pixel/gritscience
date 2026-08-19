@@ -5,10 +5,13 @@ permalink: /services/
 header:
   overlay_color: "#333"
   overlay_filter: "0.5"
-  overlay_image: /assets/images/services_title.png
+  overlay_image: /assets/images/about_title.png
 ---
 
 <style>
+  /* 상단 메인 배너 텍스트 중앙 정렬 */
+  .page__hero--overlay .wrapper { text-align: center; }
+
   /* 각 과목별 묶음을 나누고 아래쪽에 연한 회색 구분선 추가 */
   .curriculum-section {
     margin-bottom: 3em;

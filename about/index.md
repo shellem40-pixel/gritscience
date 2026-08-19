@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "학원 소개"
+title: "학원 시스템과 위치"
 permalink: /about/
 header:
   overlay_color: "#333"

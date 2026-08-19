@@ -2,14 +2,84 @@
 layout: archive
 title: "과학학습 블로그"
 permalink: /blog/
-header:
-  overlay_color: "#333"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/blog_title.png
+author_profile: false # 시안처럼 화면을 넓게 쓰기 위해 우측 프로필을 숨깁니다.
 ---
 
+<style>
+  /* 상단 메인 배너 텍스트 중앙 정렬 (원장님 추가 코드) */
+  .page__hero--overlay .wrapper { text-align: center; }
+
+  /* 1. 블로그 상단 설명 텍스트 (시안의 'Positively Artificial' 아래 글씨) */
+  .blog-description {
+    text-align: center;
+    color: #555;
+    font-size: 1.05em;
+    margin-bottom: 2.5em;
+    line-height: 1.6;
+  }
+
+  /* 2. 가로형 카테고리 메뉴 (시안의 빨간색 묶음) */
+  .blog-category-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #eaeaea; /* 하단 연한 회색 선 */
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .blog-category-menu li { margin: 0; }
+  
+  .blog-category-menu li a {
+    text-decoration: none;
+    color: #777;
+    font-size: 0.95em;
+    font-weight: 600;
+    padding-bottom: 12px;
+    display: block;
+    transition: all 0.2s;
+  }
+  
+  /* 마우스를 올리거나 선택된 메뉴의 디자인 (검은색 + 하단 굵은 줄) */
+  .blog-category-menu li a:hover,
+  .blog-category-menu li a.active {
+    color: #111;
+    border-bottom: 2px solid #111;
+  }
+
+  /* 3. 검색 아이콘을 오른쪽 끝으로 밀어내는 마법의 코드 (시안의 빨간 동그라미) */
+  .menu-search {
+    margin-left: auto !important; 
+  }
+  .menu-search a {
+    color: #111 !important;
+    font-size: 1.1em !important;
+  }
+</style>
+
+<!-- 블로그 소개말 -->
+<div class="blog-description">
+  학생들의 성적 향상과 흔들리지 않는 학습 동기를 부여하는 긍정적인 이야기.<br>
+  최적화된 과학 학습 팁과 스스로 파고드는 심화 학습(GRIT) 칼럼을 연재합니다.
+</div>
+
+<!-- 카테고리 메뉴 HTML -->
+<ul class="blog-category-menu">
+  <li><a href="/blog/" class="active">최신글 (Latest)</a></li>
+  <li><a href="/blog/">수능과학</a></li>
+  <li><a href="/blog/">내신대비</a></li>
+  <li><a href="/blog/">오답노트</a></li>
+  <li><a href="/blog/">학습자극(GRIT)</a></li>
+  
+  <!-- 우측 끝 검색 돋보기 아이콘 (이전에 만든 search 페이지로 연결) -->
+  <li class="menu-search"><a href="/search/"><i class="fas fa-search"></i></a></li>
+</ul>
+
+<!-- 블로그 글 Ба둑판(Grid) 배열 -->
 <div class="grid__wrapper">
-  {% for post in site.categories.blog %}
+  {% for post in site.posts %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>

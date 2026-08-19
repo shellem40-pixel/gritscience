@@ -43,3 +43,6 @@ defaults:
 search: true
 search_full_content: true # 본문 내용까지 모두 검색할지 여부
 search_provider: lunr # 기본 검색 엔진 사용
+
+show_date: true
+show_author: true
