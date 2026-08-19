@@ -4,4 +4,8 @@ main:
   - title: "그릿과학쟁이 시간표"
     url: /timetable/
   - title: "과학학습 질문방"
+<<<<<<< HEAD
     url: /qna/
+=======
+    url: /qna/
+>>>>>>> d37e88355107d140b274aa612a96bd88006daa62
