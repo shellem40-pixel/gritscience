@@ -7,3 +7,5 @@ main:
     url: /blog/
   - title: "공지사항"
     url: /news/
+  - title: "검색"        # 추가된 부분
+    url: /search/       # 추가된 부분 (검색 전용 페이지 주소)
