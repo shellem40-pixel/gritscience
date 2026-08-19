@@ -1,89 +1,145 @@
 ---
 layout: archive
-title: "과학학습 블로그"
 permalink: /blog/
-author_profile: false # 시안처럼 화면을 넓게 쓰기 위해 우측 프로필을 숨깁니다.
-header:
-  overlay_color: "#333"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/about_title.png
+author_profile: false
 ---
 
 <style>
-  /* 상단 메인 배너 텍스트 중앙 정렬 (원장님 추가 코드) */
-  .page__hero--overlay .wrapper { text-align: center; }
-
-  /* 1. 블로그 상단 설명 텍스트 (시안의 'Positively Artificial' 아래 글씨) */
-  .blog-description {
+  /* 1. 상단 타이틀 및 설명 (시안과 동일한 거대한 글씨와 중앙 정렬) */
+  .blog-header {
     text-align: center;
-    color: #555;
-    font-size: 1.05em;
-    margin-bottom: 2.5em;
+    margin-top: 3em;
+    margin-bottom: 4em;
+  }
+  .blog-main-title {
+    font-size: 3.2em;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 0.3em;
+    letter-spacing: -1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .blog-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 750px;
+    margin: 0 auto;
     line-height: 1.6;
   }
 
-  /* 2. 가로형 카테고리 메뉴 (시안의 빨간색 묶음) */
+  /* 2. 카테고리 메뉴 & 검색 버튼 묶음 (시안의 빨간 동그라미 부분) */
+  .blog-nav-container {
+    display: flex;
+    justify-content: space-between; /* 왼쪽 메뉴와 오른쪽 검색창을 양 끝으로 밀어냅니다 */
+    align-items: center;
+    border-bottom: 1px solid #eaeaea; /* 전체 하단 연한 회색 선 */
+    padding-bottom: 15px;
+    margin-bottom: 3em;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* 좌측 카테고리 메뉴 */
   .blog-category-menu {
     display: flex;
     list-style: none;
     padding: 0;
-    margin-bottom: 2em;
-    border-bottom: 1px solid #eaeaea; /* 하단 연한 회색 선 */
-    gap: 20px;
-    align-items: center;
-    flex-wrap: wrap;
+    margin: 0;
+    gap: 25px;
+    font-size: 0.95em;
+    font-weight: 600;
   }
-  
-  .blog-category-menu li { margin: 0; }
-  
   .blog-category-menu li a {
     text-decoration: none;
     color: #777;
-    font-size: 0.95em;
-    font-weight: 600;
-    padding-bottom: 12px;
-    display: block;
-    transition: all 0.2s;
+    transition: color 0.2s;
   }
-  
-  /* 마우스를 올리거나 선택된 메뉴의 디자인 (검은색 + 하단 굵은 줄) */
+  /* 선택된 메뉴 디자인 (검은색 글씨 + 하단 굵은 줄) */
   .blog-category-menu li a:hover,
   .blog-category-menu li a.active {
     color: #111;
-    border-bottom: 2px solid #111;
+    box-shadow: 0 2px 0 0 #111; 
+    padding-bottom: 16px; /* 선 위치를 아래로 딱 맞춤 */
   }
 
-  /* 3. 검색 아이콘을 오른쪽 끝으로 밀어내는 마법의 코드 (시안의 빨간 동그라미) */
-  .menu-search {
-    margin-left: auto !important; 
+  /* 우측 검색창 디자인 (클릭 시 테마 기본 검색창이 열림) */
+  .blog-search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95em;
+    padding: 5px 10px;
   }
-  .menu-search a {
-    color: #111 !important;
-    font-size: 1.1em !important;
+  .blog-search-box i { font-size: 1.1em; }
+  .blog-search-box:hover { color: #2471a3; } /* 마우스 올리면 학원 테마색으로 변경 */
+
+  /* 3. 시안과 동일한 큼직한 2단(2열) 카드 갤러리 배열 */
+  .custom-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 무조건 2칸으로 쪼갭니다 */
+    gap: 40px; /* 카드 사이의 넓은 여백 */
+  }
+  
+  /* 테마 기본 4단 Grid를 무시하고 2단으로 꽉 차게 덮어쓰기 */
+  .custom-grid-wrapper .grid__item {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  /* 카드 내부 글씨 크기 조정 (시안 느낌 구현) */
+  .custom-grid-wrapper .archive__item-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .custom-grid-wrapper .archive__item-excerpt {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* 스마트폰 모바일 화면에서는 1단으로 자동 변경 */
+  @media (max-width: 768px) {
+    .custom-grid-wrapper { grid-template-columns: 1fr; }
+    .blog-main-title { font-size: 2.2em; }
+    .blog-nav-container { flex-direction: column; align-items: flex-start; }
+    .blog-search-box { align-self: flex-end; margin-top: -45px; }
   }
 </style>
 
-<!-- 블로그 소개말 -->
-<div class="blog-description">
-  학생들의 성적 향상과 흔들리지 않는 학습 동기를 부여하는 긍정적인 이야기.<br>
-  최적화된 과학 학습 팁과 스스로 파고드는 심화 학습(GRIT) 칼럼을 연재합니다.
+<!-- 1. 커스텀 타이틀 및 설명 -->
+<div class="blog-header">
+  <h1 class="blog-main-title">GRIT 과학쟁이 블로그</h1>
+  <p class="blog-subtitle">
+    단순한 문제 풀이를 넘어, 학생 스스로 파고드는 흔들리지 않는 심화 학습 동기를 부여합니다.<br>
+    최적화된 과학 학습 팁과 성적 향상 노하우를 연재합니다.
+  </p>
 </div>
 
-<!-- 카테고리 메뉴 HTML -->
-<ul class="blog-category-menu">
-  <li><a href="/blog/" class="active">최신글 (Latest)</a></li>
-  <li><a href="/blog/">수능과학</a></li>
-  <li><a href="/blog/">내신대비</a></li>
-  <li><a href="/blog/">오답노트</a></li>
-  <li><a href="/blog/">학습자극(GRIT)</a></li>
+<!-- 2. 카테고리 메뉴 및 검색창 -->
+<div class="blog-nav-container">
+  <ul class="blog-category-menu">
+    <li><a href="/blog/" class="active">최신글 (Latest)</a></li>
+    <li><a href="/blog/">수능과학</a></li>
+    <li><a href="/blog/">내신대비</a></li>
+    <li><a href="/blog/">오답노트</a></li>
+    <li><a href="/blog/">학습자극(GRIT)</a></li>
+  </ul>
   
-  <!-- 우측 끝 검색 돋보기 아이콘 (이전에 만든 search 페이지로 연결) -->
-  <li class="menu-search"><a href="/search/"><i class="fas fa-search"></i></a></li>
-</ul>
+  <!-- 'search-toggle' 클래스가 테마의 기본 검색 기능을 자동으로 호출합니다 -->
+  <div class="blog-search-box search-toggle">
+    <i class="fas fa-search"></i> <span>검색 (Search)</span>
+  </div>
+</div>
 
-<!-- 블로그 글 Ба둑판(Grid) 배열 -->
-<div class="grid__wrapper">
-  {% for post in site.posts %}
+<!-- 3. 시안 비율에 맞춘 2단 Grid 갤러리 -->
+<div class="custom-grid-wrapper">
+  {% for post in site.categories.blog %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
