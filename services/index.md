@@ -17,3 +17,27 @@ permalink: /services/
 ### **스마트 오답노트 시스템**
 * AppSheet와 연동된 개별 맞춤 오답 분석
 * 학생의 취약점을 정확히 진단하여 보상 프로그램과 연계
+
+---
+layout: splash
+title: "프로그램 안내"
+
+# 원하는 이름으로 배열 그룹을 만듭니다.
+my_program_row:
+  - image_path: /assets/images/planner.jpg
+    title: "6주 몰입 각성 스터디 플래너"
+    excerpt: "단기간에 완벽 마스터! 사고력과 문제 해결 능력을 극대화하는 방법을 알아봅니다."
+    url: "/blog/study-planner/"
+    btn_label: "글 읽기"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/note.jpg
+    title: "스마트 오답노트 관리 시스템"
+    excerpt: "학생의 학습 상황을 정확히 진단하고, 단계별 과정에 맞는 체계적인 관리를 진행합니다."
+    url: "/blog/smart-note/"
+    btn_label: "글 읽기"
+    btn_class: "btn--primary"
+---
+
+## 핵심 프로그램 살펴보기
+
+{% include feature_row id="my_program_row" %}
