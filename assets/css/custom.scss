@@ -92,3 +92,57 @@
     gap: 30px;
   }
 }
+
+/* ==========================================
+   [전체 페이지 중앙 정렬]
+   ========================================== */
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* 수평 중앙 정렬 */
+  justify-content: center;   /* 수직 중앙 정렬 (필요 시) */
+  margin: 0 auto !important;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+/* ==========================================
+   [아카이브 영역 중앙 정렬 + 폭 확장]
+   ========================================== */
+.archive {
+  float: none !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+  width: 100% !important;
+  text-align: center;        /* 내부 콘텐츠 중앙 정렬 */
+}
+
+/* ==========================================
+   [상단 제목 박스 중앙 정렬]
+   ========================================== */
+.blog-header-box {
+  max-width: 600px;
+  margin: 2em auto 4em auto;
+  text-align: center;
+}
+
+/* ==========================================
+   [하단 포스트 갤러리 중앙 정렬]
+   ========================================== */
+.custom-grid-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-items: center;     /* 각 카드 중앙 정렬 */
+}
+
+/* ==========================================
+   [반응형 대응]
+   ========================================== */
+@media (max-width: 768px) {
+  #main { padding: 0 10px; }
+  .archive { max-width: 95%; }
+  .custom-grid-wrapper { grid-template-columns: 1fr; gap: 30px; }
+}
