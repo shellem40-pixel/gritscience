@@ -1,0 +1,94 @@
+/* ==========================================
+   [공통] 페이지 전체 폭 확장 + 중앙 정렬
+   ========================================== */
+.page__content {
+  max-width: 1200px;        /* single 기본 폭 */
+  margin: 0 auto;
+  padding: 0 40px;
+  float: none !important;
+}
+
+/* ==========================================
+   [Single 페이지] 본문 스타일
+   ========================================== */
+.layout--single .page__content {
+  max-width: 1200px;        /* 요청: single 폭 1200px */
+  text-align: left;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   [Splash 페이지] 중앙 정렬 + 폭 제한
+   ========================================== */
+.layout--splash .page__content {
+  max-width: 1000px;        /* splash는 약간 좁게 */
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   [상단 제목·설명 박스] 좁게 중앙 정렬
+   ========================================== */
+.blog-header-box {
+  max-width: 600px;         /* 요청: 상단 폭 600px */
+  margin: 2em auto 4em auto;
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* ==========================================
+   [하단 포스트 갤러리] 넓게 중앙 정렬
+   ========================================== */
+.custom-grid-wrapper {
+  max-width: 1400px;        /* 요청: 하단 폭 1400px */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.custom-grid-wrapper .grid__item {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.custom-grid-wrapper .archive__item-teaser img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.custom-grid-wrapper .archive__item-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.custom-grid-wrapper .archive__item-excerpt {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   [반응형]
+   ========================================== */
+@media (max-width: 768px) {
+  .page__content {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+
+  .blog-header-box {
+    max-width: 95%;
+  }
+
+  .custom-grid-wrapper {
+    max-width: 95%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

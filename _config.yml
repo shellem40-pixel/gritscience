@@ -46,3 +46,6 @@ search_provider: lunr # 기본 검색 엔진 사용
 
 show_date: true
 show_author: true
+
+sass:
+  style: compressed
